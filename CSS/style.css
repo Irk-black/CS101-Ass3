@@ -32,10 +32,6 @@ body {
     margin: 3px;
 }
 
-
-
-
-
 .nav-list {
     list-style-type: none; /*removes bullet points*/
     left: -20%;
@@ -45,17 +41,23 @@ body {
 .nav-list .list-item {
     display: inline-block;
     padding: 20px 20px;
-    left: 50%;
+    left: 60%;
     position: relative;
-    
+    cursor: pointer;
 }
+
+#login {
+    display: none;
+}
+
+
 
 .nav-list .login {
     display: inline-block;
     margin: 8px 2px;
     padding: 5px 8px;
     border: 2px solid black;
-    left: 80%;
+    right: -100%;
     position: relative;
     top: 5%;
 }
@@ -120,7 +122,6 @@ body {
     left: 40%;
     position: relative;
     display: inline-flex;
-    width: auto;
     height: 40px;
     top: -30%;
 }
@@ -130,7 +131,7 @@ body {
     padding: 9px;
     font-size: 14px;
     position: relative;
-    
+    width: 300px;
     
 }
 
@@ -138,6 +139,7 @@ body {
     width: auto;
     height: 40px;
     border: black 3px solid;
+    border-left: none;
     left: -1%;
 }
 
@@ -157,7 +159,7 @@ body {
     height: 30%;
     top: 150px;
     position: relative;
-    border-bottom: black solid 2px;
+    border-top: black solid 2px;
 }
 
 .recipe-title {
@@ -354,12 +356,15 @@ body {
 
 /*Responsive characteristics*/
 @media all and (max-width: 480px) {
-
+    body {
+        position: relative;
+    }
     .menu {
         display: block;
         position: absolute;
         right: 15px;
         top: 15px;
+        
     }
     .navbar {
         flex-direction: column;
@@ -367,6 +372,7 @@ body {
     }
     .navbar .container-icon {
         width: 100%;
+        
     }
     
     
@@ -376,12 +382,29 @@ body {
         text-align: center;
         padding-top: 10px;
         display: none;
+        background-color: #ffd600;
+        margin-left: -57px;
+        margin-bottom: 12px;
+        overflow: visible;
     }
 
     .nav-list .list-item {
         display: block;
         border-top: 1px solid white;
+        width: 100%;
+        background-color: #ffd600;
     }
+
+    #login {
+        display: block;
+        border-top: 1px solid white;
+        width: 100%;
+        background-color: #ffd600;
+    }
+
+   .nav-list .login {
+    display: none;
+   }
 
     .primary-icon {
         margin-top: 10px;
@@ -392,64 +415,24 @@ body {
     .active {
         display: block;
         position: absolute;
+        top: -5px;
+        background-position: right;
+        color: #ffd600;
+        width: 88.2%;
         
     }
     
-    .welcome-banner {
-        position: relative;
-        margin: 10px;
-        margin-bottom: 0;
-        padding: 0;
-        border: 0;
-    }
-
-    .recipe-select {
-        position: relative;
-        top: 20px;
-        bottom: 0px;
-        margin: 0;
-    }
-
-    .recipe-title {
-        position: relative;
-        text-align: center;
-        left: -50px;
-    }
-
    
-  
-
-   
-    .divider {
-        border-top: 2px solid black;
-        width: 80%;
-        top: 20px;
-        position: relative;
-        left: 10%;
-        margin: 0;
+    .welcome-banner .store-select {
+        display: none;
     }
 
-    .promo-banner {
-        background: #ffd600;
+    
+
+    .search-bar {
         position: absolute;
-        top: 693px;
-    }
-
-    .promo {
-        width: 100%;
-        top: 10px;
-        position: relative;
-        margin: 0;
-    }
-
-    .footer {
-        position: relative;
-        top: 200px;
-    }
-
-    .footer-col {
-        width: 50%;
-        margin-bottom: 30px;
+        top: 300px;
+        left: 30%;
     }
    
 }
