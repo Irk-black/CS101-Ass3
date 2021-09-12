@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+*{ /*removes unorded list defaults*/
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/*style for navbar*/
+.navbar {
+    background-color: #ffd600;
+    color: white;
+    display: flex; /*allows contents to move around each other*/
+    justify-content: space-around; /*adds space between contents*/
+    align-items: center;
+    font-size: 20px;
+    width: 100%;
+    position: relative;
+    height: 80px;
+}
+
+.primary-icon {
+    width: 266.22px;
+    height: 61px;
+    left: 10px;
+    top:10px;
+    position: absolute;
+    margin: 3px;
+}
+
+
+
+
+
+.nav-list {
+    list-style-type: none; /*removes bullet points*/
+    left: -20%;
+    position:relative;
+}
+
+.nav-list .list-item {
+    display: inline-block;
+    padding: 20px 20px;
+    left: 50%;
+    position: relative;
+    
+}
+
+.nav-list .login {
+    display: inline-block;
+    margin: 8px 2px;
+    padding: 5px 8px;
+    border: 2px solid black;
+    left: 80%;
+    position: relative;
+    top: 5%;
+}
+
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+   color: white; 
+}
+.menu {
+    display: none;
+}
+.menu-line {
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    margin-bottom: 4px;
+}
+/*Style for welcom banner*/
+.welcome-banner {
+    background-color: white;
+    height: 170px;
+    width: 100%;
+    border-top: black solid 2px;
+   
+}
+
+.store-select {
+    width: 30px;
+    height: 40px;
+    left: 20px;
+    top: 20px;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    
+}
+
+ .select-text {
+    list-style-type: none;
+    position: relative;
+    left: 50px;
+    top: -45px;
+    font-family: 'ubuntu' sans-serif; 
+    font-style: normal;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 20px;
+    align-items: left;
+    letter-spacing: 0.09em;
+    color: #000000;
+        
+}
+
+.search-bar {
+    margin: 0;
+    align-items: center;
+    left: 40%;
+    position: relative;
+    display: inline-flex;
+    width: auto;
+    height: 40px;
+    top: -30%;
+}
+
+.search-bar input {
+    border: 3px solid black;
+    padding: 9px;
+    font-size: 14px;
+    position: relative;
+    
+    
+}
+
+.search-bar img {
+    width: auto;
+    height: 40px;
+    border: black 3px solid;
+    left: -1%;
+}
+
+.welcome-text img{
+    width: 80%;
+    height: 50%;
+    /* position: relative; */
+    top: 50px;
+    padding-left: 25%; 
+    align-items: center;
+    
+}
+/*recipe section*/
+.recipe-select {
+    background: #ffd600;
+    width:100%;
+    height: 30%;
+    top: 150px;
+    position: relative;
+    border-bottom: black solid 2px;
+}
+
+.recipe-title {
+    position: relative;
+    height: 40px;
+    text-align: center;
+    top: 5%;
+    padding-left: 40%;
+    font-family: 'ubuntu';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 53px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    letter-spacing: 0.09em;
+
+    color: #000000;
+}
+
+.recipe-cards li {
+    position: relative;
+    display: inline-block;
+    margin: 50px;
+    left: 7%;
+}
+
+.recipe-cards p {
+    width: 200px;
+}
+.recipe-card1 {
+    position: relative;
+    top: 40px;
+    left: 10px;
+    align-items: center;
+}
+
+.recipe-card1 img {
+    height: 200px;
+}
+
+.recipe-card2 {
+    position: relative;
+    top: 40px;
+    left: 10px;
+    align-items: center;
+}
+
+.recipe-card2 img {
+   
+    height: 200px;
+   
+}
+
+.recipe-card3 {
+    position: relative;
+    top: 40px;
+    left: 10px;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+.recipe-card3 img {
+    
+    height: 200px;
+}
+
+
+.more-recipes {
+    top: 0px;
+    position: relative;
+    background-color: grey; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 42.5%;
+    cursor: pointer;
+    font-family: Akzidenz-Grotesk Condensed BQ;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+/*section divider*/
+.divider {
+    border-top: 3px solid black;
+    width: 80%;
+    top: 300px;
+    position: relative;
+    top: 150px;
+    left: 10%;
+}
+/*promo banner*/
+.promo-banner {
+    background: #ffd600;
+    top: 140px;
+}
+
+.promo {
+    width: 100%;
+    top: 150px;
+    position: relative;
+}
+
+/*footer*/
+.container {
+    max-width: 1170px;
+    background-color: black;
+    margin: auto;
+    height:auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer {
+    background-color: black;
+    box-sizing: border-box;
+    padding: 30px 0;
+    top: 100px;
+    position: relative;
+    height: auto;
+    
+    }
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #ffd600;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+
+}
+
+.footer ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: white;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin: 0 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffd600;
+    transition: all 0.5s ease;
+} 
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffd600;
+}
+
+/*Responsive characteristics*/
+@media all and (max-width: 480px) {
+
+    .menu {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+    .navbar {
+        flex-direction: column;
+        position: relative;
+    }
+    .navbar .container-icon {
+        width: 100%;
+    }
+    
+    
+    .nav-list {
+        list-style-type: none;
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+        display: none;
+    }
+
+    .nav-list .list-item {
+        display: block;
+        border-top: 1px solid white;
+    }
+
+    .primary-icon {
+        margin-top: 10px;
+        margin-left: 1px;
+        position: relative;
+    }
+
+    .active {
+        display: block;
+        position: absolute;
+        
+    }
+    
+    .welcome-banner {
+        position: relative;
+        margin: 10px;
+        margin-bottom: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .recipe-select {
+        position: relative;
+        top: 20px;
+        bottom: 0px;
+        margin: 0;
+    }
+
+    .recipe-title {
+        position: relative;
+        text-align: center;
+        left: -50px;
+    }
+
+   
+  
+
+   
+    .divider {
+        border-top: 2px solid black;
+        width: 80%;
+        top: 20px;
+        position: relative;
+        left: 10%;
+        margin: 0;
+    }
+
+    .promo-banner {
+        background: #ffd600;
+        position: absolute;
+        top: 693px;
+    }
+
+    .promo {
+        width: 100%;
+        top: 10px;
+        position: relative;
+        margin: 0;
+    }
+
+    .footer {
+        position: relative;
+        top: 200px;
+    }
+
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+   
+}
