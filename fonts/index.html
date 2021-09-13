@@ -1,66 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-        </style>
-    <link rel="stylesheet" href="CSS\style.css">
-   
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+    </style>
+    <link rel="stylesheet" href="CSS\style.css" />
+
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <nav class="navbar">
-        <div>  
-           <a href="#">
-            <img class="primary-icon" src="pak'nsave elements\pns-logo.jpeg" alt="The Pak'n Save logo. It's also the home button">
-           </a>
-        </div>
-        <ul class="nav-list" id="navi-list">
-            <li class="list-item">
-                 <a>Shop</a>
-            </li>
-            <li class="list-item">
-                <a>Deals</a>
-            </li>
-            <li class="list-item">
-                <a>More</a>
-            </li>
-            <li class="list-item">
-                <a>Login</a>
-            </li>
-            
-        </ul>
-        <div class="menu" id="toggle-button">
-            <div class="menu-line"> </div>
-            <div class="menu-line"> </div>
-            <div class="menu-line"> </div>
-        </div>
+      <div>
+        <a href="#">
+          <img
+            class="primary-icon"
+            src="elements\pns-logo.jpeg"
+            alt="The Pak'n Save logo. It's also the home button"
+          />
+        </a>
+      </div>
+      <ul class="nav-list" id="navi-list">
+        <li class="list-item">
+          <a>Shop</a>
+        </li>
+        <li class="list-item">
+          <a>Deals</a>
+        </li>
+        <li class="list-item">
+          <a>More</a>
+        </li>
+        <li class="list-item">
+          <a>Login</a>
+        </li>
+      </ul>
+      <div class="menu" id="toggle-button">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
     </nav>
     <div class="welcome-banner">
-        <div class="store-select">
-            <img src="pak'nsave elements\map-marker-alt-solid.svg" alt="Map marker symbol and button for store finder">
-            <li class="select-text">
-                <a>Select a Store</a>
-            </li>
-        </div>
-        <div class="welcome-text">
-            <img src="pak'nsave elements\welcome.svg" alt="Welcome to the Pak'n Save web page!" >
-        </div>
+      <div class="store-select">
+        <img
+          src="elements\map-marker-alt-solid.svg"
+          alt="Map marker symbol and button for store finder"
+        />
+        <li class="select-text">
+          <a>Select a Store</a>
+        </li>
+      </div>
+      <div class="welcome-text">
+        <img
+          src="elements\welcome.svg"
+          alt="Welcome to the Pak'n Save web page!"
+        />
+      </div>
     </div>
     <div class="recipe-select">
-        <p class="mm">Marvelous Mince</p>
+      <p class="mm">Marvelous Mince</p>
     </div>
-</body>
-<script>
-    const toggleButton = document.getElementById('toggle-button');
-    const naviList = document.getElementById('navi-list');
+  </body>
+  <script>
+    const toggleButton = document.getElementById("toggle-button");
+    const naviList = document.getElementById("navi-list");
 
-    toggleButton.addEventListener('click', () => {
-        naviList.classList.toggle('active');
-    })
-</script>
+    toggleButton.addEventListener("click", () => {
+      naviList.classList.toggle("active");
+    });
+  </script>
 </html>

@@ -1,4 +1,63 @@
-/* (A) ENTIRE PAGE */
+body {
+  background-color: #ffd600;
+}
+
+.navbar {
+  background-color: #ffd600;
+  color: white;
+  display: flex; /*allows contents to move around each other*/
+  justify-content: space-around; /*adds space between contents*/
+  align-items: center;
+  font-size: 20px;
+  width: 100%;
+  position: relative;
+  height: 80px;
+}
+
+.primary-icon {
+  width: 266.22px;
+  height: 61px;
+  left: 10px;
+  top: 10px;
+  position: absolute;
+  margin: 3px;
+}
+
+.nav-list {
+  list-style-type: none; /*removes bullet points*/
+  position: relative;
+}
+
+.nav-list .list-item {
+  display: inline-block;
+  padding: 20px 20px;
+  left: 60%;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-list .login {
+  display: none;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: white;
+}
+.menu {
+  display: none;
+}
+.menu-line {
+  width: 20px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: 4px;
+}
+
 #cart-wrap {
   font-family: arial, sans-serif;
   display: flex;
@@ -20,7 +79,7 @@ input.cart,
 button.cart {
   padding: 10px;
   border: 0;
-  background: #ff4316;
+  background: #424140;
   color: #fff;
   font-weight: 700;
   cursor: pointer;
@@ -34,7 +93,7 @@ button.cart {
 }
 .p-item {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 2px solid black;
   border-radius: 5px;
   text-align: center;
 }
@@ -54,7 +113,7 @@ button.cart {
   text-transform: uppercase;
 }
 .p-desc {
-  color: #aaa;
+  color: rgb(92, 89, 89);
   font-size: 0.9em;
 }
 .p-price {
@@ -107,5 +166,66 @@ input.c-checkout {
   }
   #cart-products {
     grid-template-columns: auto;
+  }
+  body {
+    position: relative;
+  }
+  .menu {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+  .navbar {
+    flex-direction: column;
+    position: relative;
+  }
+  .navbar .container-icon {
+    width: 100%;
+  }
+
+  .nav-list {
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    display: none;
+    background-color: #ffd600;
+    margin-left: -57px;
+    margin-bottom: 12px;
+    overflow: visible;
+  }
+
+  .nav-list .list-item {
+    display: block;
+    border-top: 1px solid white;
+    width: 100%;
+    background-color: #ffd600;
+  }
+
+  #login {
+    display: block;
+    border-top: 1px solid white;
+    width: 100%;
+    background-color: #ffd600;
+  }
+
+  .nav-list .login {
+    display: none;
+  }
+
+  .primary-icon {
+    margin-top: 10px;
+    margin-left: 1px;
+    position: relative;
+  }
+
+  .active {
+    display: block;
+    position: absolute;
+    top: -5px;
+    background-position: right;
+    color: #ffd600;
+    width: 88.2%;
   }
 }

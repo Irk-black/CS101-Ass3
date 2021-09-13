@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple JS Cart</title>
-
-    <!-- (A) CSS + JS -->
+    <title>Cart</title>
     <link rel="stylesheet" href="css/cart-style.css" />
     <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
   </head>
   <body>
-    <div id="cart-wrap">
-      <!-- (B) PRODUCTS LIST -->
-      <div id="cart-products"></div>
+    <nav class="navbar">
+      <div>
+        <a href="index.html">
+          <img
+            class="primary-icon"
+            src="elements\pns-logo.jpeg"
+            alt="The Pak'n Save logo and the home button"
+          />
+        </a>
+      </div>
+      <ul class="nav-list" id="navi-list">
+        <li class="list-item">
+          <a>Deals</a>
+        </li>
+        <li class="list-item">
+          <a>More</a>
+        </li>
+        <li class="list-item" id="login"><a>Login</a></li>
+        <li class="login">
+          <a href="login.html">Login</a>
+        </li>
+      </ul>
 
-      <!-- (C) CURRENT CART -->
+      <div class="menu" id="toggle-button">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+    </nav>
+    <div id="cart-wrap">
+      <div id="cart-products"></div>
       <div id="cart-items"></div>
     </div>
   </body>

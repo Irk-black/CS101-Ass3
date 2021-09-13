@@ -1,18 +1,15 @@
 var cart = {
-  // (A) PROPERTIES
-  hPdt: null, // HTML products list
-  hItems: null, // HTML current cart
-  items: {}, // Current items in cart
-  iURL: "images/", // Product image URL folder
+  hPdt: null,
+  hItems: null,
+  items: {},
+  iURL: "elements/",
 
-  // (B) LOCALSTORAGE CART
-  // (B1) SAVE CURRENT CART INTO LOCALSTORAGE
-  save: function () {
+  saveCart: function () {
     localStorage.setItem("cart", JSON.stringify(cart.items));
   },
 
-  // (B2) LOAD CART FROM LOCALSTORAGE
-  load: function () {
+  // (B2) loadOldCart CART FROM LOCALSTORAGE
+  loadOldCart: function () {
     cart.items = localStorage.getItem("cart");
     if (cart.items == null) {
       cart.items = {};
@@ -22,11 +19,11 @@ var cart = {
   },
 
   // (B3) EMPTY ENTIRE CART
-  nuke: function () {
+  emptyCart: function () {
     if (confirm("Empty cart?")) {
       cart.items = {};
       localStorage.removeItem("cart");
-      cart.list();
+      cart.displayCart();
     }
   },
 
@@ -75,20 +72,20 @@ var cart = {
       part.type = "button";
       part.value = "Add to Cart";
       part.className = "cart p-add";
-      part.onclick = cart.add;
+      part.onclick = cart.addToCart;
       part.dataset.id = id;
       item.appendChild(part);
     }
 
-    // (C3) LOAD CART FROM PREVIOUS SESSION
-    cart.load();
+    // (C3) loadOldCart CART FROM PREVIOUS SESSION
+    cart.loadOldCart();
 
     // (C4) LIST CURRENT CART ITEMS
-    cart.list();
+    cart.displayCart();
   },
 
-  // (D) LIST CURRENT CART ITEMS (IN HTML)
-  list: function () {
+  // (D) displayCart CURRENT CART ITEMS (IN HTML)
+  displayCart: function () {
     // (D1) RESET
     cart.hItems.innerHTML = "";
     let item, part, pdt;
@@ -107,7 +104,7 @@ var cart = {
       cart.hItems.appendChild(item);
     }
 
-    // (D3) CART IS NOT EMPTY - LIST ITEMS
+    // (D3) CART IS NOT EMPTY - displayCart ITEMS
     else {
       let p,
         total = 0,
@@ -131,7 +128,7 @@ var cart = {
         part.value = "X";
         part.dataset.id = id;
         part.className = "c-del cart";
-        part.addEventListener("click", cart.remove);
+        part.addEventListener("click", cart.removeFromCart);
         item.appendChild(part);
 
         // QUANTITY
@@ -141,7 +138,7 @@ var cart = {
         part.value = cart.items[id];
         part.dataset.id = id;
         part.className = "c-qty";
-        part.addEventListener("change", cart.change);
+        part.addEventListener("change", cart.itemQuantity);
         item.appendChild(part);
 
         // SUBTOTAL
@@ -153,14 +150,14 @@ var cart = {
       item = document.createElement("div");
       item.className = "c-total";
       item.id = "c-total";
-      item.innerHTML = "TOTAL: $" + total;
+      item.innerHTML = "TOTAL: $" + Math.round(total * 100) / 100;
       cart.hItems.appendChild(item);
 
       // EMPTY BUTTONS
       item = document.createElement("input");
       item.type = "button";
       item.value = "Empty";
-      item.addEventListener("click", cart.nuke);
+      item.addEventListener("click", cart.emptyCart);
       item.className = "c-empty cart";
       cart.hItems.appendChild(item);
 
@@ -174,28 +171,22 @@ var cart = {
     }
   },
 
-  // (E) ADD ITEM INTO CART
-  add: function () {
+  addToCart: function () {
     if (cart.items[this.dataset.id] == undefined) {
       cart.items[this.dataset.id] = 1;
     } else {
       cart.items[this.dataset.id]++;
     }
-    cart.save();
-    cart.list();
+    cart.saveCart();
+    cart.displayCart();
   },
 
-  // (F) CHANGE QUANTITY
-  change: function () {
-    // (F1) REMOVE ITEM
+  itemQuantity: function () {
     if (this.value <= 0) {
       delete cart.items[this.dataset.id];
-      cart.save();
-      cart.list();
-    }
-
-    // (F2) UPDATE TOTAL ONLY
-    else {
+      cart.saveCart();
+      cart.displayCart();
+    } else {
       cart.items[this.dataset.id] = this.value;
       var total = 0;
       for (let id in cart.items) {
@@ -205,32 +196,10 @@ var cart = {
     }
   },
 
-  // (G) REMOVE ITEM FROM CART
-  remove: function () {
+  removeFromCart: function () {
     delete cart.items[this.dataset.id];
-    cart.save();
-    cart.list();
-  },
-
-  // (H) CHECKOUT
-  checkout: function () {
-    // SEND DATA TO SERVER
-    // CHECKS
-    // SEND AN EMAIL
-    // RECORD TO DATABASE
-    // PAYMENT
-    // WHATEVER IS REQUIRED
-    alert("TO DO");
-
-    /*
-    var data = new FormData();
-    data.append('cart', JSON.stringify(cart.items));
-    data.append('products', JSON.stringify(products));
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "SERVER-SCRIPT");
-    xhr.onload = function(){ ... };
-    xhr.send(data);
-    */
+    cart.saveCart();
+    cart.displayCart();
   },
 };
 window.addEventListener("DOMContentLoaded", cart.init);
